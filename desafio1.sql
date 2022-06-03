@@ -28,8 +28,8 @@ CREATE TABLE following(
     user_id INTEGER,
     artist_id INTEGER,
     CONSTRAINT PRIMARY KEY(user_id, artist_id),
-	FOREIGN KEY (user_id) REFERENCES users (id),
-	FOREIGN KEY (artist_id) REFERENCES artists (artist_id)
+	  FOREIGN KEY (user_id) REFERENCES users (id),
+	  FOREIGN KEY (artist_id) REFERENCES artists (artist_id)
 ) ENGINE=InnoDB;
 
 CREATE TABLE albums(
@@ -57,13 +57,33 @@ CREATE TABLE history(
 	FOREIGN KEY (song_id) REFERENCES songs (song_id)
 ) ENGINE=InnoDB;
 
-INSERT INTO SpotifyClone.plans (plan_id, plan_name, )
+INSERT INTO plans (plan_name, plan_value)
 VALUES
-  ('exemplo de dados 1', 'exemplo de dados A'),
-  ('exemplo de dados 2', 'exemplo de dados B'),
-  ('exemplo de dados 3', 'exemplo de dados C');
+  ('gratuito', 0),
+  ('familiar', 7.99),
+  ('universitario', 5.99),
+  ('pessoal', 6.99);
+  
+INSERT INTO users (name, age, plan_id, date_started)
+VALUES
+  ('Thati', 23, 1, '2019-10-20'),
+  ('Cintia', 35, 2, '2017-12-30'),
+  ('Bill', 20, 3, '2019-06-05'),
+  ('Roger', 45, 4, '2020-05-13'),
+  ('Norman', 58, 4, '2017-02-17'),
+  ('Patrick', 33, 2, '2017-01-06'),
+  ('Vivian', 26, 3, '2018-01-05'),
+  ('Carol', 19, 3, '2018-02-14'),
+  ('Angelina', 42, 2, '2018-04-29'),
+  ('Paul', 46, 2, '2017-01-17')
+  ;
 
-INSERT INTO SpotifyClone.tabela2 (coluna1, coluna2)
+INSERT INTO artists (artist_name)
 VALUES
-  ('exemplo de dados 1', 'exemplo de dados X'),
-  ('exemplo de dados 2', 'exemplo de dados Y');
+  ('Walter Phoenix'),
+  ('Peter Strong'),
+  ('Lance Day'),
+  ('Freedie Shannon'),
+  ('Tyler Isle'),
+  ('Fog')
+  ;
